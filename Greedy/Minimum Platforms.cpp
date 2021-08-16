@@ -1,5 +1,8 @@
 //https://practice.geeksforgeeks.org/problems/minimum-platforms-1587115620/1#
 
+// T.C = O(NlogN) + O(2N)
+// S.C = O(1)
+
 class Solution{
     public:
     //Function to find the minimum number of platforms required at the
