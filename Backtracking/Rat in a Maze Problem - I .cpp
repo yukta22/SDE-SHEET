@@ -38,14 +38,14 @@ class Solution{
         return v;
         
     }
+}
   
 //////////////////////////////////////////////////////////////// Approach 2 ////////////////////////////////////////////////////////////////
 
 class Solution{
     public:
     vector<string> v;
-        void solve(int i, int j, vector<vector<int>> &a, int n, vector<string> &ans, string move, 
-    vector<vector<int>> &vis) {
+    void solve(int i, int j, vector<vector<int>> &a, int n, vector<string> &ans, string move, vector<vector<int>> &vis) {
         if(i==n-1 && j==n-1) {
             ans.push_back(move);
             return; 
@@ -87,5 +87,4 @@ class Solution{
         if(m[0][0] == 1) solve(0,0,m,n, ans, "", vis); 
         return ans; 
     }
-
-    
+}
