@@ -1,5 +1,11 @@
 //https://leetcode.com/problems/implement-stack-using-queues/
 
+class MyStack {
+public:
+    /** Initialize your data structure here. */
+    MyStack() {
+        
+    }
     queue<int> q;
     
     /** Push element x onto stack. */
@@ -28,5 +34,4 @@
     bool empty() {
         return q.empty();
     }
-
-
+};
