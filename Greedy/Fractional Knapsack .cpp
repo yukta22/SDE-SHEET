@@ -2,6 +2,11 @@
 //T.C. : O(NlogN) + N
 //S.C. : O(1)
 
+struct Item{
+    int value;
+    int weight;
+}
+
 bool compare(Item a , Item b){
     double r1 = (double)a.value / (double)a.weight;
     double r2 = (double)b.value / (double)b.weight;
