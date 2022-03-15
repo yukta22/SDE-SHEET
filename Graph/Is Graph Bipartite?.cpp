@@ -1,5 +1,7 @@
 //https://leetcode.com/problems/is-graph-bipartite/
 
+
+/////////////////////////////////////////////////// BFS ///////////////////////////////////////////////////
 class Solution {
 public:
     bool isBipartite(vector<vector<int>>& graph) {
@@ -32,3 +34,38 @@ public:
         
     }
 };
+
+/////////////////////////////////////////////////// DFS ///////////////////////////////////////////////////
+
+class Solution {
+public:
+    
+        bool dfs(int n,bool c,vector<vector<int>>& graph,vector<int>&color,vector<int>&visited){
+        visited[n]=1;
+        color[n]=c;
+        for(int it:graph[n]){
+            if(visited[it]==0){
+                if(dfs(it,c^1,graph,color,visited)==false)return false;
+            }
+            else
+                if(color[n]==color[it])return false;
+        }
+        return true;
+    }
+
+    
+    bool isBipartite(vector<vector<int>>& graph) {
+        int n=graph.size();
+        vector<int>color(n,0);
+        vector<int>visited(n,0);
+        for(int i=0;i<n;i++){
+            if(visited[i]==0){
+                if(!(dfs(i,0,graph,color,visited)))
+                       return false;
+            }
+        }
+        return true;
+    
+    }
+};
+
