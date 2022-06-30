@@ -34,23 +34,21 @@ public:
 class Solution {
 public:
     
-    void solve(TreeNode* root, vector<int> &ans){
-        if(root){
-            
-            if(root->left){
-                solve(root->left, ans);
-            }
-            ans.push_back(root -> val);
-            if(root->right){
-                solve(root->right, ans);
-            }
-        }
-        return;
+    void postorder(TreeNode* root , vector<int> &nodes){
+        
+        if(!root) return;
+        
+        postorder(root -> left, nodes);
+        postorder(root -> right, nodes);
+        nodes.push_back(root -> val);
+        
     }
     
-    vector<int> inorderTraversal(TreeNode* root) {
-        vector<int> ans;
-        solve(root,ans);
-        return ans;
+    
+    vector<int> postorderTraversal(TreeNode* root) {
+        vector<int> nodes;
+        postorder(root, nodes);
+        return nodes;
     }
 };
+
